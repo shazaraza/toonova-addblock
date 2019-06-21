@@ -1,0 +1,20 @@
+{
+  "name": "toonova-adblocker",
+  "version": "1.0",
+  "description": "A simple adblocker",
+  "permissions": ["webRequest", "webRequestBlocking","activeTab", "http://*/", "https://*/"],
+  "background": {
+    "scripts": ["blocked_domains.js", "background.js","delete.js"]
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+
+  "manifest_version": 2,
+
+  "content_scripts" : [{
+        "matches" : ["http://www.toonova.net/*"],
+        "js" : ["inject.js"]
+    }],
+    "web_accessible_resources": ["delete.js"]
+}
