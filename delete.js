@@ -1,27 +1,29 @@
 // add event listener to the iframe object
+// replace link if value is null
 let sourcesClass = document.getElementsByClassName("vmargin");
 var sourceNumber = sourcesClass.length;
 var sourceArray=[];
 try{
   var nextVideo = document.getElementById("elinks").children[1];
+  var prevVideo = document.getElementById("elinks").children[0];
 }
 catch(err){
   console.log(err.message);
 }
-var i;
-for (i = 0; i < sourceNumber; i++) {
-  if(sourcesClass[i].children[1].firstElementChild.src!= null){
-  sourceArray.push(sourcesClass[i].children[1].firstElementChild.src)
+try{
+DifferentVideo(nextVideo,9);
+DifferentVideo(prevVideo,16);
 }
-  //add video type to all sources
+catch(err){
+  console.log(err.message);
 }
+function DifferentVideo(video,keyNumber){
+  document.addEventListener("keydown",function(e){
+    if (e.keyCode === keyNumber){
+      if(video!= null&&video.href!=null){
+        window.open(video.href,"_self");
 
-sourceArray.forEach(function(element) {
-  element.addEventListener("ended",function(){
-      if(nextVideo!= null){
-        if(nextVideo.href!=null){
-        window.open(nextVideo.href,"_self");
-      }
     }
-});
-});
+  }
+  });
+}
