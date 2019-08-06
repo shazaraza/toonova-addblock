@@ -7,7 +7,7 @@
     "scripts": ["blocked_domains.js", "background.js","delete.js"]
   },
   "browser_action": {
-    "default_popup": "popup.html"
+    "default_popup": "Control.html"
   },
 
   "manifest_version": 2,
