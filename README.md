@@ -1,0 +1,3 @@
+This is an ad blocker chrome extention which had the purpose of being used on the toonova streaming service.
+Additionally, it had Netflix functionality, allowing the user to save the position of the video that they watched
+Unfortunately the site is no longer running though...
